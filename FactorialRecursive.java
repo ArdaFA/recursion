@@ -1,23 +1,15 @@
 public class FactorialRecursive {
 
-    public static int factorial(int number) throws Exception {
-        int result;
-        if(number <= 0){
-            throw new Exception("the number has to be positive");
+    public static int recFactorial(int number){
+        if (number <= 0){
+            return 1;
         }
-
-        else if (number == 1 || number == 2){
-            return number;
-        }
-        else {
-            result = number * (factorial(number-1));
-        }
-        return result;
+        return number * recFactorial(number-1);
     }
 
     public static void main(String[] args) throws Exception {
         int number = Integer.parseInt(args[0]);
-        number = factorial(number);
+        number = recFactorial(number);
         System.out.println(number);
     }
 }
