@@ -1,5 +1,24 @@
 public class Fibonacci {
 
+    public static int iterativeFibonacci(int number){
+        if (number <= 0) {
+            return 0;
+        }
+
+        int result = 0;
+
+        int previous = 1;
+        int beforePrevious = 1;
+
+        for(int i = 0; i < number - 2; i++){
+            result = previous + beforePrevious;
+            int temp = result;
+            beforePrevious = previous;
+            previous = temp;
+        }
+        return result;
+    }
+
     public static int fibonacci(int number) throws IllegalArgumentException{
         int result;
         if (number <= 0){
